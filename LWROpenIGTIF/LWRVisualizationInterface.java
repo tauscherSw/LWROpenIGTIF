@@ -137,10 +137,6 @@ public class LWRVisualizationInterface extends Thread {
 	public MatrixTransformation T_IMGBASE_StateM= null;
 	
 	/**
-	 * Transformation from robot base coordinate system to camera/sensor  space coordinate system
-	 */
-	public MatrixTransformation T_CAMBASE_StateM= null;
-	/**
 	 * Current Joint positions
 	 */
 	public JointPosition jntPose_StateM = null;
@@ -276,7 +272,7 @@ public class LWRVisualizationInterface extends Thread {
 					openIGTServer= null;
 					openIGTClient.close();
 					openIGTClient = null;
-					System.out.println("State machine interface server stopped");
+					System.out.println("Visualization interface server stopped");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

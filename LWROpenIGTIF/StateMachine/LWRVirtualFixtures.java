@@ -48,7 +48,7 @@ public class LWRVirtualFixtures implements LWRState {
     public boolean ImageSpace=false;
 	//Some Variables for Stiffness Control
 	private double distance;
-	private double awaredist = 200;
+	private double awaredist = 20;
 	private double last_distance=0.0;
 	private double max_stiff=5000;
 	private MatrixTransformation T_Base_cone;
@@ -142,11 +142,11 @@ public class LWRVirtualFixtures implements LWRState {
 			ConeTip = false;
 			EndPoint = false;
 			if(this.VFtype==2){
-				awaredist = 20;
+				awaredist = 10;
 				lwrStatemachine.InitFlag = false;
 				
 			}else{
-				awaredist = 50;
+				awaredist = 20;
 				lwrStatemachine.InitFlag = false;
 			}
 		}

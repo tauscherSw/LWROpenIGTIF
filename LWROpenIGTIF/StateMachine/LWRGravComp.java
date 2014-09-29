@@ -28,17 +28,17 @@ import com.kuka.roboticsAPI.geometricModel.CartDOF;
 import com.kuka.roboticsAPI.motionModel.controlModeModel.CartesianImpedanceControlMode;
 
 /**
- * In This State the LWR is set to GravitationsCompensation mode so that robot can be moved without constraints.
- * * 
+ * In this state the LWR is set to gravitation Compensation mode so that robot can be moved manually and freely without constraints. The GravComp/Free mode can be used for e.g., for registration purposes
+ * 
  * @author Sebastian Tauscher
  * @version 0.1
  */
 public class LWRGravComp implements LWRState {
 
 /**
- * In this Function control Mode Parameters are set and the commanded pose are calculated due the current LWR State.
- * In the GravComp State the Translational and rotational Stiffness is set to zero and the command pose to the current measured Pose.
- * Because the Values are static whiles this State is active the Values are just set when the InitFlag of the state machine is true.
+ * In this Function control mode parameters are set and the command pose is calculated due to the current LWR State.
+ * In the GravComp State the translational and rotational Stiffness is set to zero and the command pose to the current measured Pose.
+ * Because the values are not changing during this State the values are just set when the InitFlag of the state machine is true.
  * @param lwrStatemachine - The operated state machine
  * @see LWRState
  */
@@ -71,10 +71,10 @@ public class LWRGravComp implements LWRState {
 	
 	
 	/**
-	 * In this Function the Acknowledge String which is send to the State Control is defined due the current LWR State.
-	 * In the GravCompState the String is Set to "GravComp;".
+	 * In this function the acknowledge string, which is send to the state control is defined due the current LWR State.
+	 * In the GravComp State the String is Set to "GravComp;".
 	 * 
-	 * @param lwrStatemachine The operated Statemachine
+	 * @param lwrStatemachine The operated state machine
 	 */
 	@Override
 	public void SetACKPacket(LWRStatemachine lwrStatemachine) {
@@ -86,8 +86,8 @@ public class LWRGravComp implements LWRState {
 	}
 
 	/**
-	 * In this Function the Command String which is received from the State Control is interpreted and the parameters are set. It is just called after a State transition 
-	 * For the LWRState LWRGravComp this is empty because no Parameters are send from the state control.
+	 * In this function the command string which is received from the state control is interpreted and the parameters are set. It is only called after a State transition.
+	 * For the LWRState LWRGravComp because no Parameters are send from the state control.
 	 * @param lwrStatemachine - The operated state machine
 	 * @see LWRState
 	 */

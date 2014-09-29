@@ -26,7 +26,7 @@ import com.kuka.roboticsAPI.geometricModel.CartDOF;
 import com.kuka.roboticsAPI.geometricModel.math.Vector;
 import com.kuka.roboticsAPI.motionModel.controlModeModel.CartesianImpedanceControlMode;
 /**
- * In This State the LWR is holding its position with a maximum stiffness. This an save mode the robot could always change too.
+ * In this state the LWR is holding its position with a maximum stiffness. This is an save mode to which the robot could always change to.
  * 
  * @author Sebastian Tauscher
  * @version 0.1
@@ -34,9 +34,8 @@ import com.kuka.roboticsAPI.motionModel.controlModeModel.CartesianImpedanceContr
 class LWRIdle implements LWRState{
 	boolean IncreaseStiffness = false;
 	/**
-	 * In this Function control Mode Parameters are set and the commanded pose are calculated due the current LWR State.
-	 * During the Idle State the Cartesian Stiffness is set to the maximum value of 5000, the NullSpaceStiffness is set to zero and the Pose is set to the measured pose.
-	 * Because the Values are static whiles this State is active the Values are just set when the InitFlag of the Statemachine is true.
+	 * In this function control mode parameters are set and the command pose are calculated due the current LWR State.
+	 * During the Idle state the Cartesian Stiffness is set to the maximum value of 5000, the NullSpaceStiffness is set to zero and the Pose is set to the measured pose in initializing routine (InitFlag of state machine) is set true of the state. If the change in the stiffness values is exceeding a certain threshold, the stiffness is increased in smaller steps to avoid high forces resulting from a fast increased stiffness.
 	 * 
 	 * @param lwrStatemachine The operated state machine
 	 * @see LWRState
@@ -118,8 +117,8 @@ class LWRIdle implements LWRState{
 	}
 
 	/**
-	 * In this Function the Acknowledge String which is send to the State Control is defined due the current LWR State.
-	 * In the Idle State the String is Set to "IDLE;" or "SendData;".
+	 * In this function the acknowledge string which is send to the State Control is defined due the current LWR State.
+	 * In the Idle State the String is Set to "IDLE;".
 	 * 
 	 * @param lwrStatemachine The operated Statemachine
 	 */
@@ -136,7 +135,7 @@ class LWRIdle implements LWRState{
 		}
 	}
 	/**
-	 * In this Function the Command String which is received from the State Control is interpreted and the parameters are set. It is just called after a State transition 
+	 * In this function the Command String which is received from the State Control is interpreted and the parameters are set. It is just called after a State transition 
 	 * For the LWRState LWRIdle this is empty because no Parameters are send from the state control.
 	 * @param lwrStatemachine - The operated state machine
 	 * @see LWRState

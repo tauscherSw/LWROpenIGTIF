@@ -52,7 +52,7 @@ public class LWRMoveToPose implements LWRState {
 	
 	@Override
 	/**
-	 * In this Function control Mode Parameters are set and the commanded pose are calculated due the current LWR State.
+	 * In this function control mode parameters are set and the command pose are calculated due the current LWR State.
 	 * During the MoveToPose State the Cartesian Stiffness is set to the maximum value of 5000 and the Pose is set to the closest point at the path plus an offset in the desired direction.
 	 * When the End point of the path is reached the robot holds his position and the boolean EndPath is set true.
 	 * @param lwrStatemachine The operated state machine
@@ -116,7 +116,7 @@ public class LWRMoveToPose implements LWRState {
 
 	/**
 	 * In this Function the Acknowledge String which is send to the State Control is defined due the current LWR State.
-	 * In the MovetoPose State the String is Set to "MovetoPose;true;" or "MoveToPose;false;" according to teh value of the boolean ReachedPose.
+	 * In the MovetoPose State the String is Set to "MovetoPose;true;" or "MoveToPose;false;" according to the value of the boolean ReachedPose.
 	 * 
 	 * @param lwrStatemachine The operated Statemachine
 	 */

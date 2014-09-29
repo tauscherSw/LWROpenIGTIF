@@ -595,7 +595,6 @@ public class LWRStateMachineInterface extends Thread {
     	  try {
 			String CMDString =new String(TmpString);
 			CMDmessage = CMDString;
-			System.out.println("Command String :" + CMDmessage);
     	  } catch (Exception e) {
 			// TODO Automatisch generierter Erfassungsblock
     		  ErrorHandler.ErrorMessage =" Couldn't generate new OpenIGTLink String Message!!";
@@ -618,7 +617,6 @@ public class LWRStateMachineInterface extends Thread {
     		  	TransformImageRobot = MatrixTransformation.of(Vector.of(t_tmp[0], t_tmp[1], t_tmp[2]), Matrix.ofRowFirst(R_tmp[0], R_tmp[1], R_tmp[2], R_tmp[3], R_tmp[4], R_tmp[5], R_tmp[6], R_tmp[7], R_tmp[8]));
     		  	IGTLdatatype = "TRANSFORM";
     		  	ErrorHandler.ErrorMessage = "Transform to Image space succesfully received:" + TransformImageRobot;
-				System.out.println( "Transform to Image space succesfully received:" + TransformImageRobot);
 				TransformRecieved = true;
 				
         	  } catch (Exception e) {
