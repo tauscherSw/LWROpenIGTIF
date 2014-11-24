@@ -56,7 +56,8 @@ public class LWRVisualizationInterface extends Thread {
 	 */
 	static 
 	{
-		System.loadLibrary("SWIGigtlutil");
+		
+		System.load("C:/KRC/ApplicationServer/Git/IGTBasicStateMachine/OpenIGTLinkLib/SWIGigtlutil.dll");
 	}
 
 	

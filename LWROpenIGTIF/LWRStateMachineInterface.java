@@ -64,7 +64,7 @@ public class LWRStateMachineInterface extends Thread {
 	 */
 	static 
 	{
-		System.loadLibrary("SWIGigtlutil");
+		System.load("C:/KRC/ApplicationServer/Git/IGTBasicStateMachine/OpenIGTLinkLib/SWIGigtlutil.dll");
 	}
 	/**
 	 * String containing the data type of the received OpenIGTLink message
